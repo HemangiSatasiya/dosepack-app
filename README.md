@@ -1,6 +1,16 @@
-# AngularApp
+# Dosepack-app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+
+## Steps to start the server
+`git clone https://github.com/HemangiSatasiya/dosepack-app.git
+cd dosepack-app
+npm install`
+
+If Angular CLI is installed globally then run
+`ng serve`
+Otherwise run
+`node_modules\.bin\ng serve`
 
 ## Development server
 
