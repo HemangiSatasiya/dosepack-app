@@ -1,0 +1,400 @@
+@import "../var.scss";
+
+.push-10-t {
+  margin-top: 10px;
+}
+
+.push-5-t {
+  margin-top: 5px;
+}
+
+.push-0 {
+  margin: 0;
+}
+
+.push-5--t {
+  margin-top: -5px;
+}
+
+.push-10-b {
+  margin-bottom: 10px;
+}
+
+.push-5-b {
+  margin-bottom: 5px;
+}
+
+.push-5-l {
+  margin-left: 5px;
+}
+
+.push-10-l {
+  margin-left: 10px;
+}
+
+.push-0-b {
+  margin-bottom: 0px;
+}
+
+.padding-5-t {
+  padding-top: 5px;
+}
+
+.padding-10-t {
+  padding-top: 10px;
+}
+
+.padding-10-b {
+  padding-bottom: 10px;
+}
+
+.padding-5-r {
+  padding-right: 5px;
+}
+
+.padding-5-l {
+  padding-left: 5px;
+}
+
+.padding-0-l {
+  padding-left: 0px;
+}
+
+.padding-0-r {
+  padding-right: 0px;
+}
+
+.padding-20-r {
+  padding-right: 20px;
+}
+
+.padding-20-l {
+  padding-left: 20px;
+}
+
+.padding-5 {
+  padding: 5px;
+  padding-bottom: 0;
+}
+
+.padding-0 {
+  padding: 0px;
+}
+
+.text-blue {
+  color: #009fae;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.line-1-3 {
+  line-height: 1.3;
+}
+
+.in-block {
+  display: inline-block;
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 0 !important;
+}
+
+.container {
+  .dose-block {
+    border: 1px solid #343a40;
+    padding: 0;
+    margin-bottom: 3px;
+
+    p {
+      line-height: 1;
+    }
+
+    .border-box {
+      border: 1px solid #c5c5c5;
+      padding: 0 2px;
+      line-height: 1.2;
+    }
+  }
+
+  .border-box {
+    border: 1px solid #c5c5c5;
+  }
+
+  .dose-inner-block {
+    border-left: 1px solid #343a40;
+  }
+
+  .border-top-black {
+    border-top: 1px solid #343a40;
+
+    p {
+      margin: 3px;
+      text-align: center;
+    }
+  }
+
+  .img-thumbnail {
+    border: none;
+    padding: 0;
+  }
+
+  .rph-box {
+    margin-left: 10px;
+    border: 1px solid #c5c5c5;
+    padding: 0 5px;
+    font-size: 10px;
+    text-transform: capitalize;
+    padding-right: 15px;
+
+    &.font-14 {
+      font-size: 14px;
+      padding-right: 5px;
+      padding: 2px 5px
+    }
+  }
+
+  .legend {
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(270deg);
+    padding: 0 !important;
+
+    .dot.color-purple {
+      height: 12px;
+      width: 12px;
+      border-radius: 45%;
+      color: #c705c7;
+      border: 1px solid #c705c7;
+      background: #c705c7;
+      text-align: right;
+      float: right;
+      margin-bottom: 0px;
+      margin-top: 6px;
+    }
+  }
+
+  .legend-border-box {
+    border: 2px solid #a0a0a0;
+    height: 787px;
+    -ms-transform: rotate(207deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    left: -133px;
+
+    .relative {
+      padding: 5px 10px;
+    }
+
+    .legend-text {
+      position: absolute;
+      top: -7px;
+      background: #fff;
+      padding-left: 3px;
+      padding-right: 3px;
+      line-height: 1;
+
+      &.legend-text-bottom {
+        top: initial;
+        bottom: -7px;
+      }
+
+      &.legend-left-value1 {
+        left: 10px;
+      }
+
+      &.legend-left-value2 {
+        left: $legend-left-value*1;
+      }
+
+      &.legend-left-value3 {
+        left: ($legend-left-value - 5) *2;
+      }
+
+      &.legend-left-value4 {
+        left: ($legend-left-value - 6)*3;
+      }
+
+      &.legend-left-value5 {
+        left: ($legend-left-value - 7)*4;
+      }
+
+      &.legend-left-value6 {
+        left: ($legend-left-value - 8)*5;
+      }
+
+      &.legend-left-value7 {
+        left: ($legend-left-value - 8)*6;
+      }
+
+      &.legend-left-value-bottom1 {
+        left: 100px;
+      }
+
+      &.legend-left-value-bottom2 {
+        left: 250px;
+      }
+
+      &.legend-left-value-bottom3 {
+        left: 400px;
+      }
+
+      &.legend-left-value-bottom4 {
+        left: 545px;
+      }
+
+      &.legend-left-value-bottom5 {
+        left: 695px;
+      }
+
+      &.legend-left-value-bottom6 {
+        left: 845px;
+      }
+
+      &.legend-left-value-bottom7 {
+        left: 990px;
+      }
+    }
+
+    .slot-detail-section {
+      display: inline-block;
+      width: 150px;
+      height: 184px;
+
+      .slot-data {
+        height: $top-value;
+        width: $left-value;
+        position: absolute;
+        border-right: 2px solid #a0a0a0;
+        padding: 8px;
+
+        .quantity-border-box {
+          border: 1px solid green;
+          line-height: 1;
+          padding: 0px 2px;
+          float: right;
+        }
+
+        .morning,
+        .noon,
+        .eve,
+        .bed {
+          display: none;
+        }
+
+        &.row0 {
+          left: $left-value*0;
+        }
+
+        &.row1 {
+          left: $left-value*1;
+        }
+
+        &.row2 {
+          left: $left-value*2;
+        }
+
+        &.row3 {
+          left: $left-value*3;
+        }
+
+        &.row4 {
+          left: $left-value*4;
+        }
+
+        &.row5 {
+          left: $left-value*5;
+        }
+
+        &.row6 {
+          left: $left-value*6;
+        }
+
+        &.column0 {
+          top: $top-value*0;
+
+          .slot-color {
+            color: $color-green;
+
+            .morning {
+              display: block;
+            }
+          }
+        }
+
+        &.column1 {
+          top: $top-value*1;
+
+          .slot-color {
+            color: $color-blue;
+
+            .noon {
+              display: block;
+            }
+          }
+        }
+
+        &.column2 {
+          top: $top-value*2;
+
+          .slot-color {
+            color: $color-red;
+
+            .eve {
+              display: block;
+            }
+          }
+        }
+
+        &.column3 {
+          top: $top-value*3;
+
+          .slot-color {
+            color: $color-brown;
+
+            .bed {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-note {
+  position: absolute;
+  bottom: -42px;
+  left: 210px;
+
+  &.rotate-footer-note {
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(270deg);
+    bottom: 100px;
+    right: -153px;
+    left: inherit;
+  }
+
+  p {
+    margin-right: 30px;
+  }
+}

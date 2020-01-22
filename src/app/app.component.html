@@ -1,0 +1,222 @@
+<div class="container" style="width: 816px; height: 1300px;">
+  <div class="" *ngIf="data">
+    <div style="height: 1045px;">
+      <div class="row padding-10-t padding-10-b">
+        <div class="d-flex flex-column bd-highlight mb-3" style="height: 58px; width: 170px; overflow: hidden;">
+          <img src="{{ data.pharmacy_data.store_logo }}" width="170" class="img-thumbnail push-5-b" alt="Store Logo" />
+          <div class="weight-700">
+            <span class="padding-5-r"><i class="fa fa-phone"></i> {{ data.pharmacy_data.store_phone }} </span>
+            <span><i class="fa fa-fax"></i> {{ data.pharmacy_data.store_fax }}</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column bd-highlight mb-3 padding-5-t"
+          style="width: 265px; height: 58px; overflow: hidden;">
+          <p class="push-5-b">
+            <span class="font-10">{{data.pharmacy_data.store_address}} |</span>
+            <span class="font-10">{{data.pharmacy_data.store_website}}</span><br />
+            <span class="font-12 text-uppercase text-blue weight-700">The Pharmacist is available for consulting.</span>
+          </p>
+          <p class="weight-700 font-16 push-0-b">
+            {{data.patient_details.last_name}}, {{data.patient_details.first_name}}
+            ({{data.patient_details.patient_no}})
+          </p>
+        </div>
+        <div class="d-flex flex-row bd-highlight mb-3">
+          <div>
+            <ngx-barcode [bc-value]="data.pack_info.pack_display_id" [bc-display-value]="false" [bc-height]="30"
+              [bc-width]="1.6" [bc-margin]="0" [bc-margin-top]="7" [bc-margin-bottom]="5" [bc-margin-right]="5">
+            </ngx-barcode>
+            <p class="push-0-b text-uppercase">Pack Id:
+              <span class="weight-700">{{data.pack_info.pack_display_id}}</span>
+              <span class="rph-box weight-700">Rph: </span>
+            </p>
+          </div>
+          <div class="padding-5-t">
+            <img src="/assets/img/dosepack_logo.png" class="img-thumbnail" width="190" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 dose-block" *ngFor="let data of data.pharmacy_rx_info">
+          <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="col-md-8 padding-5">
+              <p class="font-16 weight-700 push-5-b">{{ data.short_drug_name_v2 }}</p>
+              <p class="font-16 push-5-b">{{ data.sig }}</p>
+              <p class="font-12 in-block push-5-b">
+                <span>Rx </span>
+                <span class="weight-700">{{data.pharmacy_rx_no}} </span>
+                <span> Qty </span>
+                <span class="weight-700">{{data.print_qty}} </span>
+              </p>
+              <div class="in-block push-5-l font-12 weight-700">
+                <div class="in-block border-box">
+                  <span> M: </span>
+                  <span class="weight-700 color-green">{{data.morning}} </span>
+                </div>
+                <div class="in-block border-box">
+                  <span> N: </span>
+                  <span class="weight-700 color-blue">{{data.noon}} </span>
+                </div>
+                <div class="in-block border-box">
+                  <span> E: </span>
+                  <span class="weight-700 color-red">{{data.evening}} </span>
+                </div>
+                <div class="in-block border-box">
+                  <span> B: </span>
+                  <span class="weight-700 color-brown">{{data.bed}} </span>
+                </div>
+              </div>
+              <p class="font-11 push-5-b">
+                <span class="padding-5-r">Mfg </span>
+                <span class="padding-5-r"> Refill {{data.remaining_refill}} </span>
+                <span class="padding-5-r"> Dr. {{data.last_name}}, {{data.first_name}} {{data.cellphone}}</span>
+              </p>
+              <p class="font-10">
+                <span class="color-danger weight-700">Caution: </span>
+                <span *ngIf="data.caution1 || data.caution2">{{data.caution1}} {{data.caution1}}</span>
+                <span *ngIf="!data.caution1 || !data.caution2">N.A.</span>
+              </p>
+            </div>
+            <div class="col-md-4 pull-right dose-inner-block padding-0">
+              <div class="">
+                <img src="data:image/jpeg;base64,{{ data.image_name_b64 }}" class="img-thumbnail" />
+              </div>
+              <div class="align-self-end border-top-black">
+                <p class="font-12">{{ data.color }} {{ data.shape }} {{ data.imprint }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border-box padding-20-l" *ngIf="data.patient_details">
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <img src="/assets/img/patient_photo.png" class="img-thumbnail" alt="Store Logo" />
+      </div>
+      <div class="d-flex flex-column bd-highlight mb-3 push-10-l push-5-t">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="weight-700 font-18 push-5-b" style="height: 18px; overflow: hidden; width: 255px;">
+              {{data.patient_details.last_name}}, {{data.patient_details.first_name}}
+              ({{data.patient_details.patient_no}})
+            </p>
+            <p class="push-5-b" style="height: 15px; overflow: hidden; width: 255px;">
+              <span>DOB: </span>
+              <span class="weight-700 padding-5-r">{{data.patient_details.dob | date: 'MM/dd/yyyy'}}</span>
+              <span class="padding-5-l weight-700"><i class="fa fa-phone"></i> {{ data.patient_details.workphone }}
+              </span>
+            </p>
+          </div>
+          <div class="col-md-6 pull-right padding-0">
+            <div class="pull-right push-5--t">
+              <ngx-barcode [bc-value]="data.pack_info.pack_display_id" [bc-display-value]="false" [bc-height]="25"
+                [bc-width]="1.5" [bc-margin]="0" [bc-margin-top]="5" [bc-margin-left]="5" [bc-margin-right]="0"
+                [bc-margin-bottom]="0">
+              </ngx-barcode>
+            </div>
+            <p class="pull-right push-0-b text-uppercase pull-right push-5-t">
+              <span class="rph-box font-14 weight-700 text-uppercase">Pack Id: {{data.pack_info.pack_display_id}}
+              </span>
+            </p>
+          </div>
+        </div>
+        <p style="height: 15px; overflow: hidden; width: 570px;">
+          <span class="padding-5-r">{{data.patient_details.address1}}</span>
+          <span class="weight-700 padding-5-l">
+            <i class="fa fa-hospital-o"></i>
+            &nbsp;{{data.patient_details.facility_name}}
+          </span>
+        </p>
+        <div class="row">
+          <div class="col-md-5 line-1-3" style="width: 300px; height: 35px; overflow: hidden;">
+            <span class="color-danger weight-700">Allergy: </span>
+            <span>{{data.patient_details.allergy}}</span>
+          </div>
+          <div class="col-md-7 padding-0" style="width: 300px; height: 35px; overflow: hidden;">
+            <p class="push-5-b">
+              <span>Admin Period: </span>
+              <span class="weight-700 padding-5-r">{{data.pack_info.filled_start_date | date: 'MM/dd/yyyy'}} -
+                {{data.pack_info.filled_end_date | date: 'MM/dd/yyyy'}} (1 Week)</span>
+            </p>
+            <p class="push-0-b">
+              <span>Filled by: </span>
+              <span class="weight-700 padding-5-r">{{data.pack_info.filled_by}} </span>
+              <span class="padding-5-l">Exp: </span>
+              <span class="weight-700 padding-5-r">{{data.pack_info.exp_date}} </span>
+              <span class="padding-5-l">Fill: </span>
+              <span class="weight-700 padding-5-r">{{data.pack_info.created_date | date: 'MM/dd/yyyy'}} </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column bd-highlight mb-3 push-10-l push-5-t">
+        <div class="mt-auto p-2 bd-highlight legend">
+          <p class="push-0-b weight-700 color-green">08:00 AM</p>
+          <p class="push-0-b weight-700 color-blue">12:00 PM</p>
+          <p class="push-0-b weight-700 color-red">05:00 PM</p>
+          <p class="push-0-b weight-700 color-brown">09:00 PM</p>
+          <p class="color-purple dot"></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note rotate-footer-note">
+      <p class="font-16 color-danger in-block weight-700">Warning: Federal or state law prohibits transfer of this
+        precription
+        to any person other than patient for whom it is prescribed.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="width: 816px; height: 800px;">
+  <div class="" *ngIf="data">
+    <div class="row push-10-t" style="width:1052px; height: 950px;" *ngIf="data.slot_details">
+      <div class="legend-border-box relative">
+        <div *ngFor="let number of [1,2,3,4,5,6,7]">
+          <div class="weight-700 legend-text legend-left-value{{number}}"> DAY {{number}} </div>
+        </div>
+        <div class="slot-detail-section push-0"
+          *ngFor="let item of data.slot_details.data.slot_data | keyvalue: keeporder">
+          <div class="slot-data row{{item.value.slot_row}} column{{item.value.slot_column}}">
+            <div class="pull-left padding-0">
+              <p class="weight-700 font-16 push-5-b"
+                style="width: 80px; overflow: hidden; height: 18px; word-break: break-all;">
+                {{data.patient_details.last_name}}, {{data.patient_details.first_name}}
+              </p>
+              <p class="slot-color push-0-b weight-700 text-uppercase">
+                {{item.value.hoa_date | date: 'EEE MM/dd'}}
+              </p>
+              <p class="slot-color push-0-b weight-700">
+                {{item.value.hoa_date + ' ' + item.value.hoa_time | date: 'h:mm a'}}
+              </p>
+              <p class="slot-color push-5-b font-16 weight-700">
+                <span class="morning"> MORN</span>
+                <span class="noon"> NOON</span>
+                <span class="eve"> EVE</span>
+                <span class="bed"> BED</span>
+              </p>
+            </div>
+            <div class="pull-right padding-0">
+              <qrcode [qrdata]="'0050023,' + data.pack_info.pack_display_id + ',1,' + item.key" [width]="52"
+                [errorCorrectionLevel]="'M'" [margin]="1"></qrcode>
+              <div class="quantity-border-box">{{item.value.quantity}}</div>
+            </div>
+            <div class="row push-0" *ngFor="let drugs of item.value.drug_details">
+              <p class="font-12 push-0-b">{{drugs.quantity}} - {{drugs.drug_name}} :</p>
+            </div>
+          </div>
+        </div>
+        <div *ngFor="let number of [1,2,3,4,5,6,7]">
+          <div class="weight-700 legend-text legend-text-bottom legend-left-value-bottom{{number}}"> DAY {{number}}
+          </div>
+        </div>
+        <div class="footer-note">
+          <p class="color-danger in-block">Keep away from children</p>
+          <p class="in-block"><i class="fa fa-recycle color-green"></i> Green packaging designed to reduce
+            waste <i class="fa fa-recycle color-green"></i></p>
+          <p class="color-danger in-block">Store in cool dry place</p>
+        </div>
+      </div>
+      <div><br /></div>
+    </div>
+  </div>
+</div>
