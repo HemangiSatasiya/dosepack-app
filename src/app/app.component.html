@@ -1,6 +1,6 @@
 <div class="container" style="width: 816px; height: 1300px;">
   <div class="" *ngIf="data">
-    <div style="height: 1045px;">
+    <div class="relative" style="height: 1045px;">
       <div class="row padding-10-t padding-10-b">
         <div class="d-flex flex-column bd-highlight mb-3" style="height: 58px; width: 170px; overflow: hidden;">
           <img src="{{ data.pharmacy_data.store_logo }}" width="170" class="img-thumbnail push-5-b" alt="Store Logo" />
@@ -88,6 +88,11 @@
           </div>
         </div>
       </div>
+      <div class="footer-note rotate-footer-note">
+        <p class="font-16 color-danger in-block weight-700">Warning: Federal or state law prohibits transfer of this
+          precription
+          to any person other than patient for whom it is prescribed.</p>
+      </div>
     </div>
     <div class="row border-box padding-20-l" *ngIf="data.patient_details">
       <div class="d-flex flex-column bd-highlight mb-3">
@@ -158,11 +163,6 @@
           <p class="color-purple dot"></p>
         </div>
       </div>
-    </div>
-    <div class="footer-note rotate-footer-note">
-      <p class="font-16 color-danger in-block weight-700">Warning: Federal or state law prohibits transfer of this
-        precription
-        to any person other than patient for whom it is prescribed.</p>
     </div>
   </div>
 </div>
