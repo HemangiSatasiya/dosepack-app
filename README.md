@@ -6,12 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```
 git clone https://github.com/HemangiSatasiya/dosepack-app.git
 cd dosepack-app
-npm install`
+npm install
 ```
 
 If Angular CLI is installed globally then run
 `ng serve`
-Otherwise run
+otherwise run
 `node_modules\.bin\ng serve`
 
 ## Development server
